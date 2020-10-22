@@ -1,14 +1,7 @@
 from django.contrib import admin
 from core.models import *
 
-class BibliotecaAdmin (admin.ModelAdmin):
-    class EntryInLinesRevista(admin.TabularInline):
-        model = Revista
-    class EntryInLinesLibro(admin.TabularInline):
-        model = Libro
 
-    inlines = [EntryInLinesRevista]
-    inlines = [EntryInLinesLibro]
 
 """---------------------------------------------------------------------------------"""
 
@@ -39,18 +32,16 @@ class ProfesorSup(admin.ModelAdmin):
 """---------------------------------------------------------------------------------"""
 
 
-class PrestamoSup(admin.ModelAdmin):
-    list_display = ['id','codigo','fcha_salida','fcha_regreso',]
+
 
 
 """---------------------------------------------------------------------------------"""
 
 
-admin.site.register(Biblioteca, BibliotecaAdmin)
-admin.site.register(MatDeLec, MatDeLecSup)
-admin.site.register(Libro, LibroSup)
-admin.site.register(Revista, RevistaSup)
-admin.site.register(Prestamo, PrestamoSup)
-admin.site.register(Persona, PersonaSup)
-admin.site.register(Alumno, AlumnoSup)
-admin.site.register(Profesor, ProfesorSup)
+admin.site.register(DT)
+admin.site.register(Jugador)
+admin.site.register(Mercado)
+admin.site.register(VendJug)
+admin.site.register(CompJug)
+admin.site.register(Usuario)
+
